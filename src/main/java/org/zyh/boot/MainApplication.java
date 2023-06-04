@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication // 这个注解明确的指出这是一个springBoot项目
 public class MainApplication {
 
-    // 1121265456
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class, args);
     }
