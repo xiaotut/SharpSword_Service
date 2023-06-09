@@ -22,7 +22,24 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
     </dependencies>
+
+    <!--
+    SpringBoot应用打包插件，点击maven中的package就可以打包了。
+    打包后会在target文件夹下生成一个.jar文件，这个文件可以直接拷贝，拷贝到一个文件中，直接打开cmd输入  “java -jar 文件名”  就可以启动项目
+    -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
     <properties>
         <maven.compiler.source>20</maven.compiler.source>
