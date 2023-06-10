@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.zyh.boot.common.bean.ResponseBean;
+import org.zyh.boot.common.constants.ErrorConstants;
+import org.zyh.boot.common.controller.BaseController;
 
 /**
  * @Auther : Zhao Yuheng
@@ -14,18 +16,17 @@ import org.zyh.boot.common.bean.ResponseBean;
 // 上面两个注解可以合成下面的注解：
 @RestController
 @RequestMapping(value = "/practice")
-public class HelloController {
+public class HelloController extends BaseController {
 
     @GetMapping("/hello")
     public ResponseBean practice() {
         ResponseBean responseBean = new ResponseBean();
         try {
-            String a = "123123";
-            responseBean.setData(a);
+            responseBean.setData("hello world");
+            return setSuccessResponse(responseBean);
         } catch (Exception e) {
-            return responseBean;
+            System.out.println(e);
+            return setFailResponse(responseBean, ErrorConstants.COMMON_FAIL);
         }
-
-        return responseBean;
     }
 }
